@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Login to Stackly Bank — Secure Internet Banking">
+<title>Login — Stackly Bank</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="demo-banner" style="background:#f59e0b;color:#000;text-align:center;padding:8px 16px;font-size:13px;font-weight:700;position:sticky;top:0;z-index:99999;">&#9888; DEMO PROJECT ONLY &mdash; This is NOT a real bank. No real financial transactions occur.</div>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img class="nav-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly">
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Stackly</span>
+          <span class="nav-logo-tagline">Secure Banking</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+
+        <a href="signup.html" class="btn btn-primary btn-sm">Open Account</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-bg-shapes">
+    <div class="hero-shape hero-shape-1" style="opacity:.07"></div>
+    <div class="hero-shape hero-shape-2" style="opacity:.06"></div>
+  </div>
+  <div class="container">
+    <div class="auth-grid">
+      <!-- Left Info -->
+      <div class="auth-info">
+        <span class="section-tag">Secure Login</span>
+        <h1 class="auth-info-title">Welcome Back to <span class="text-gold">Stackly</span></h1>
+        <p class="auth-info-subtitle">Sign in to access your accounts, manage finances, transfer money and much more — all from one secure dashboard.</p>
+        <div class="auth-features">
+          <div class="auth-feature"><div class="auth-feature-icon">🔐</div>256-bit SSL encryption on all sessions</div>
+          <div class="auth-feature"><div class="auth-feature-icon">📲</div>2-Factor authentication for extra security</div>
+          <div class="auth-feature"><div class="auth-feature-icon">⚡</div>Real-time account access and transfers</div>
+          <div class="auth-feature"><div class="auth-feature-icon">🤖</div>AI-powered fraud monitoring 24/7</div>
+          <div class="auth-feature"><div class="auth-feature-icon">🌐</div>Access from any device, anywhere</div>
+        </div>
+      </div>
+
+      <!-- Login Card -->
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <div class="auth-card-logo">
+            <img class="auth-card-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly">
+            <span class="auth-card-logo-name">Stackly Bank</span>
+          </div>
+          <h2 class="auth-card-title">Sign In</h2>
+          <p class="auth-card-subtitle">Enter your credentials to access your account</p>
+        </div>
+
+        <form class="auth-form" id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="user-id">Customer ID / Email</label>
+            <div class="input-group">
+              <span class="input-icon">👤</span>
+              <input class="form-control" type="text" id="user-id" placeholder="Enter Customer ID or Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <div class="input-group" style="position:relative">
+              <span class="input-icon">🔒</span>
+              <input class="form-control" type="password" id="login-password" placeholder="Enter your password" required style="padding-right:44px">
+              <button type="button" class="password-toggle">👁</button>
+            </div>
+          </div>
+          <div class="remember-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember">
+              Remember me for 30 days
+            </label>
+            <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary w-full" style="justify-content:center;margin-top:6px">
+            Sign In Securely →
+          </button>
+        </form>
+
+        <div class="form-divider">
+          <div class="form-divider-line"></div>
+          <span class="form-divider-text">OR</span>
+          <div class="form-divider-line"></div>
+        </div>
+
+        <button class="btn btn-outline w-full" style="justify-content:center" onclick="showOTPLogin()">
+          📲 Login with OTP
+        </button>
+
+        <div id="otp-login-section" class="d-none" style="margin-top:16px">
+          <div class="form-group">
+            <label class="form-label">Enter Mobile Number</label>
+            <div class="input-group">
+              <span class="input-icon">📱</span>
+              <input class="form-control" type="tel" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <button class="btn btn-primary w-full" style="justify-content:center;margin-top:10px" onclick="showToast('OTP sent to your registered mobile','success')">
+            Send OTP
+          </button>
+        </div>
+
+        <div class="auth-footer-note">
+          Don't have an account? <a href="signup.html">Open Free Account →</a>
+        </div>
+
+        <div style="margin-top:18px;padding:12px;background:rgba(46,204,113,.07);border:1px solid rgba(46,204,113,.18);border-radius:10px;font-size:.75rem;color:rgba(255,255,255,.55);text-align:center;line-height:1.5">
+          🔒 Your connection is secure. Stackly will never ask for your password via phone or email.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" title="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+<script>
+/* Already logged in → go straight to dashboard */
+if ((localStorage.getItem('tsb-user-email') || '').trim()) {
+  window.location.replace('dashboard.html');
+}
+function showOTPLogin() {
+  const s = document.getElementById('otp-login-section');
+  s.classList.toggle('d-none');
+}
+</script>
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1a1a2e;border-top:2px solid #00CCFF;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.78rem;font-family:sans-serif"><span style="color:#00CCFF;font-weight:700">🎓 DEMO PROJECT</span><span style="color:rgba(255,255,255,.7)">This is a student portfolio website — not a real bank. No real data is collected.</span><button onclick="this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);padding:3px 10px;border-radius:50px;cursor:pointer;font-size:.72rem;margin-left:8px">Dismiss</button></div>
+</body>
+</html>
+
+

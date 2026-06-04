@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stackly Bank — My Account Dashboard">
+<title>Dashboard — Stackly Bank</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+.loan-progress{background:rgba(11,107,206,.12);border-radius:4px;height:6px;margin-top:8px;overflow:hidden}
+.loan-progress-fill{height:100%;background:linear-gradient(90deg,#0B6BCE,#16A34A);border-radius:4px}
+.notif-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(11,107,206,.08)}
+.notif-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.notif-dot.green{background:var(--success)}
+.notif-dot.gold{background:#0B6BCE}
+.notif-dot.blue{background:var(--blue)}
+.notif-text{font-size:.8rem;color:#475569;line-height:1.5}
+.notif-time{font-size:.68rem;color:#94A3B8;margin-top:2px}
+</style>
+</head>
+<body class="dashboard-page">
+<div id="demo-banner" style="background:#f59e0b;color:#000;text-align:center;padding:8px 16px;font-size:13px;font-weight:700;position:sticky;top:0;z-index:99999;">&#9888; DEMO PROJECT ONLY &mdash; This is NOT a real bank. No real financial transactions occur.</div>
+
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="dashboard-sidebar">
+    <a href="index.html" class="sidebar-logo">
+      <img class="sidebar-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly">
+      <span class="sidebar-logo-name">Stackly</span>
+    </a>
+
+    <div class="sidebar-nav">
+      <div class="sidebar-section-label">Main</div>
+      <a class="sidebar-nav-item active" href="dashboard.html">
+        <span class="sidebar-nav-icon">🏠</span> Dashboard
+      </a>
+      <a class="sidebar-nav-item" href="404.html">
+        <span class="sidebar-nav-icon">💳</span> Accounts
+      </a>
+      <a class="sidebar-nav-item" href="404.html">
+        <span class="sidebar-nav-icon">↕️</span> Transfers
+      </a>
+      <a class="sidebar-nav-item" href="404.html">
+        <span class="sidebar-nav-icon">🧾</span> Bill Payments
+      </a>
+
+      <div class="sidebar-section-label">Products</div>
+      <a class="sidebar-nav-item" href="credit-cards.html">
+        <span class="sidebar-nav-icon">💳</span> Credit Cards
+      </a>
+      <a class="sidebar-nav-item" href="loans.html">
+        <span class="sidebar-nav-icon">💰</span> Loans
+      </a>
+      <a class="sidebar-nav-item" href="services.html">
+        <span class="sidebar-nav-icon">📈</span> Investments
+      </a>
+      <a class="sidebar-nav-item" href="services.html">
+        <span class="sidebar-nav-icon">🛡️</span> Insurance
+      </a>
+
+      <div class="sidebar-section-label">Tools</div>
+      <a class="sidebar-nav-item" href="404.html">
+        <span class="sidebar-nav-icon">📊</span> Analytics
+      </a>
+      <a class="sidebar-nav-item" href="404.html">
+        <span class="sidebar-nav-icon">🔔</span> Notifications
+        <span style="margin-left:auto;background:var(--gold);color:var(--navy);font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:50px">3</span>
+      </a>
+      <a class="sidebar-nav-item" href="404.html">
+        <span class="sidebar-nav-icon">⚙️</span> Settings
+      </a>
+
+      <div style="margin-top:20px;padding:0 4px">
+        <a href="index.html" class="sidebar-nav-item" style="color:var(--danger);border:1px solid rgba(231,76,60,.15)">
+          <span class="sidebar-nav-icon">🚪</span> Logout
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+    <!-- Top Bar -->
+    <div class="dashboard-topbar">
+      <div class="dashboard-greeting">
+        <h2 id="dashboard-greeting-h2">Good Morning! 👋</h2>
+        <p>Sunday, June 1, 2026 | Last login: Today, 9:42 AM from Mumbai</p>
+      </div>
+      <div class="dashboard-topbar-actions">
+        <div class="topbar-email-pill" id="topbar-email-pill" title="Logged in as">
+          <span class="topbar-email-icon">✉</span>
+          <span class="topbar-email-text" id="topbar-email-text">USER@EMAIL.COM</span>
+        </div>
+        <a class="topbar-btn" href="dashboard.html" title="Language">🌐</a>
+        <div style="position:relative">
+          <div class="topbar-btn topbar-notif" title="Notifications" id="notif-btn">
+            🔔<span class="topbar-notif-dot" id="notif-dot"></span>
+          </div>
+          <!-- Notification Dropdown -->
+          <div id="notif-panel" style="display:none;position:absolute;top:46px;right:-8px;width:308px;background:#0d1424;border:1px solid rgba(91,191,181,.25);border-radius:14px;box-shadow:0 18px 54px rgba(0,0,0,.65);z-index:9999;overflow:hidden">
+            <div style="padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:.86rem;font-weight:700;color:#fff">🔔 Notifications</span>
+              <span id="mark-all-btn" style="font-size:.72rem;color:#5BBFB5;cursor:pointer;font-weight:600">Mark all read</span>
+            </div>
+            <div style="max-height:294px;overflow-y:auto;padding:4px 0">
+              <div style="display:flex;gap:11px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start">
+                <div style="width:9px;height:9px;border-radius:50%;background:#2ecc71;flex-shrink:0;margin-top:5px"></div>
+                <div><div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5">Salary of ₹65,000 credited to your savings account</div><div style="font-size:.69rem;color:#64748B;margin-top:3px">Today, 9:00 AM</div></div>
+              </div>
+              <div style="display:flex;gap:11px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start">
+                <div style="width:9px;height:9px;border-radius:50%;background:#0B6BCE;flex-shrink:0;margin-top:5px"></div>
+                <div><div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5">Credit card bill due Jun 15 — ₹42,300 outstanding</div><div style="font-size:.69rem;color:#64748B;margin-top:3px">Yesterday</div></div>
+              </div>
+              <div style="display:flex;gap:11px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start">
+                <div style="width:9px;height:9px;border-radius:50%;background:#00a8e8;flex-shrink:0;margin-top:5px"></div>
+                <div><div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5">FD of ₹1,80,000 matures on Aug 12, 2026</div><div style="font-size:.69rem;color:#64748B;margin-top:3px">May 30</div></div>
+              </div>
+              <div style="display:flex;gap:11px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start">
+                <div style="width:9px;height:9px;border-radius:50%;background:#2ecc71;flex-shrink:0;margin-top:5px"></div>
+                <div><div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5">Reward points updated — 12,840 pts available to redeem</div><div style="font-size:.69rem;color:#64748B;margin-top:3px">May 28</div></div>
+              </div>
+              <div style="display:flex;gap:11px;padding:12px 16px;align-items:flex-start">
+                <div style="width:9px;height:9px;border-radius:50%;background:#0B6BCE;flex-shrink:0;margin-top:5px"></div>
+                <div><div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5">Home Loan EMI ₹14,500 auto-debited successfully</div><div style="font-size:.69rem;color:#64748B;margin-top:3px">May 10</div></div>
+              </div>
+            </div>
+            <div style="padding:11px 16px;border-top:1px solid rgba(255,255,255,.07);text-align:center;cursor:pointer" onclick="document.getElementById('notif-panel').style.display='none'">
+              <span style="font-size:.78rem;color:#5BBFB5;font-weight:600">View all notifications →</span>
+            </div>
+          </div>
+        </div>
+        <div class="topbar-avatar" id="topbar-avatar" title="Profile">AA</div>
+      </div>
+    </div>
+
+    <!-- Balance Cards -->
+    <div class="dashboard-balance-cards">
+      <div class="balance-card">
+        <div class="balance-card-header">
+          <div class="balance-card-icon">🏦</div>
+          <span class="balance-card-badge badge-green">+3.2%</span>
+        </div>
+        <div class="balance-card-amount">₹4,85,230</div>
+        <div class="balance-card-label">Total Available Balance</div>
+      </div>
+      <div class="balance-card">
+        <div class="balance-card-header">
+          <div class="balance-card-icon">💳</div>
+          <span class="balance-card-badge badge-blue">Active</span>
+        </div>
+        <div class="balance-card-amount">₹2,40,000</div>
+        <div class="balance-card-label">Savings Account</div>
+      </div>
+      <div class="balance-card">
+        <div class="balance-card-header">
+          <div class="balance-card-icon">💰</div>
+          <span class="balance-card-badge badge-red">Due 10th</span>
+        </div>
+        <div class="balance-card-amount">₹14,500</div>
+        <div class="balance-card-label">Next EMI Due</div>
+      </div>
+      <div class="balance-card">
+        <div class="balance-card-header">
+          <div class="balance-card-icon">⭐</div>
+          <span class="balance-card-badge badge-gold">Platinum</span>
+        </div>
+        <div class="balance-card-amount">12,840</div>
+        <div class="balance-card-label">Reward Points</div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="dashboard-panel" style="margin-bottom:18px">
+      <div class="dashboard-panel-header">
+        <span class="dashboard-panel-title">Quick Actions</span>
+      </div>
+      <div class="quick-actions">
+        <button class="quick-action-btn" onclick="showToast('Transfer initiated','info')">
+          <span class="qa-icon">↗️</span><span>Send Money</span>
+        </button>
+        <button class="quick-action-btn" onclick="showToast('Bill payment portal','info')">
+          <span class="qa-icon">🧾</span><span>Pay Bills</span>
+        </button>
+        <button class="quick-action-btn" onclick="showToast('Top up mobile','info')">
+          <span class="qa-icon">📱</span><span>Mobile Recharge</span>
+        </button>
+        <button class="quick-action-btn" onclick="showToast('FD booking','info')">
+          <span class="qa-icon">📈</span><span>Book FD</span>
+        </button>
+        <button class="quick-action-btn" onclick="showToast('Statement generated','success')">
+          <span class="qa-icon">📄</span><span>Statement</span>
+        </button>
+        <button class="quick-action-btn" onclick="showToast('Card blocked','success')">
+          <span class="qa-icon">🔒</span><span>Block Card</span>
+        </button>
+        <button class="quick-action-btn" onclick="window.location.href='loans.html'">
+          <span class="qa-icon">💰</span><span>Apply Loan</span>
+        </button>
+        <button class="quick-action-btn" onclick="showToast('Support ticket created','info')">
+          <span class="qa-icon">🎧</span><span>Support</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Transactions + Chart -->
+    <div class="dashboard-content-grid">
+      <!-- Transactions -->
+      <div class="dashboard-panel">
+        <div class="dashboard-panel-header">
+          <span class="dashboard-panel-title">Recent Transactions</span>
+          <span class="panel-action">View All</span>
+        </div>
+        <div class="trans-list">
+          <div class="trans-item">
+            <div class="trans-icon">🛒</div>
+            <div class="trans-details"><div class="trans-name">Amazon Shopping</div><div class="trans-date">Today, 10:34 AM</div></div>
+            <span class="trans-amount" style="color:var(--danger)">-₹2,499</span>
+          </div>
+          <div class="trans-item">
+            <div class="trans-icon">💼</div>
+            <div class="trans-details"><div class="trans-name">Salary Credit</div><div class="trans-date">Jun 1, 9:00 AM</div></div>
+            <span class="trans-amount" style="color:var(--success)">+₹65,000</span>
+          </div>
+          <div class="trans-item">
+            <div class="trans-icon">⚡</div>
+            <div class="trans-details"><div class="trans-name">Electricity Bill</div><div class="trans-date">May 31, 6:20 PM</div></div>
+            <span class="trans-amount" style="color:var(--danger)">-₹1,240</span>
+          </div>
+          <div class="trans-item">
+            <div class="trans-icon">🍕</div>
+            <div class="trans-details"><div class="trans-name">Swiggy Order</div><div class="trans-date">May 31, 8:15 PM</div></div>
+            <span class="trans-amount" style="color:var(--danger)">-₹380</span>
+          </div>
+          <div class="trans-item">
+            <div class="trans-icon">📲</div>
+            <div class="trans-details"><div class="trans-name">UPI — Rahul Kumar</div><div class="trans-date">May 30, 3:00 PM</div></div>
+            <span class="trans-amount" style="color:var(--success)">+₹5,000</span>
+          </div>
+          <div class="trans-item">
+            <div class="trans-icon">🏥</div>
+            <div class="trans-details"><div class="trans-name">Apollo Hospital</div><div class="trans-date">May 29, 11:00 AM</div></div>
+            <span class="trans-amount" style="color:var(--danger)">-₹3,800</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Chart -->
+      <div class="dashboard-panel">
+        <div class="dashboard-panel-header">
+          <span class="dashboard-panel-title">Spending Analytics</span>
+          <span class="panel-action">May 2026</span>
+        </div>
+        <div class="chart-area">
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="45" style="height:0"></div><div class="chart-bar-label">Dec</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="60" style="height:0"></div><div class="chart-bar-label">Jan</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="35" style="height:0"></div><div class="chart-bar-label">Feb</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="75" style="height:0"></div><div class="chart-bar-label">Mar</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="55" style="height:0"></div><div class="chart-bar-label">Apr</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="88" style="height:0" style="background:linear-gradient(to top,var(--gold-light),var(--gold))"></div><div class="chart-bar-label">May</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-inner" data-height="20" style="height:0;opacity:.5"></div><div class="chart-bar-label">Jun</div></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-top:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:120px">
+            <div style="font-size:.72rem;color:#64748B);margin-bottom:3px">Total Spent</div>
+            <div style="font-size:1.1rem;font-weight:700;color:var(--danger)">₹42,380</div>
+          </div>
+          <div style="flex:1;min-width:120px">
+            <div style="font-size:.72rem;color:#64748B);margin-bottom:3px">Total Received</div>
+            <div style="font-size:1.1rem;font-weight:700;color:var(--success)">₹72,000</div>
+          </div>
+          <div style="flex:1;min-width:120px">
+            <div style="font-size:.72rem;color:#64748B);margin-bottom:3px">Net Savings</div>
+            <div style="font-size:1.1rem;font-weight:700;color:var(--gold-light)">₹29,620</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Credit Card + Loan + Notifications -->
+    <div class="dashboard-content-grid">
+      <!-- Credit Card Overview -->
+      <div class="dashboard-panel">
+        <div class="dashboard-panel-header">
+          <span class="dashboard-panel-title">Credit Card Overview</span>
+          <span class="panel-action" onclick="window.location.href='credit-cards.html'">View Cards</span>
+        </div>
+        <div class="card-visual card-visual-platinum" style="height:160px;border-radius:12px;margin-bottom:16px;font-size:.85rem">
+          <div class="card-chip" style="width:32px;height:24px"></div>
+          <div class="card-number" style="font-size:.82rem">•••• •••• •••• 8842</div>
+          <div class="card-bottom" style="font-size:.72rem">
+            <span class="card-holder" id="card-holder-name">CARDHOLDER</span>
+            <span class="card-network" style="font-size:1rem">VISA</span>
+          </div>
+          <div class="card-shine"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+          <span style="font-size:.78rem;color:#475569)">Credit Used</span>
+          <span style="font-size:.78rem;font-weight:600">₹42,300 / ₹3,00,000</span>
+        </div>
+        <div style="background:rgba(11,107,206,.1);border-radius:4px;height:6px;overflow:hidden;margin-bottom:12px">
+          <div style="height:100%;width:14%;background:linear-gradient(90deg,var(--success),var(--blue));border-radius:4px"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between">
+          <div><div style="font-size:.7rem;color:#64748B)">Available Limit</div><div style="font-size:1rem;font-weight:700;color:var(--success)">₹2,57,700</div></div>
+          <div style="text-align:right"><div style="font-size:.7rem;color:#64748B)">Min. Due</div><div style="font-size:1rem;font-weight:700;color:var(--warning)">₹2,115</div></div>
+          <div style="text-align:right"><div style="font-size:.7rem;color:#64748B)">Due Date</div><div style="font-size:1rem;font-weight:700">Jun 15</div></div>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="dashboard-panel">
+        <div class="dashboard-panel-header">
+          <span class="dashboard-panel-title">🔔 Notifications</span>
+          <span class="panel-action">Mark All Read</span>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot green"></div>
+          <div><div class="notif-text">Salary of ₹65,000 credited to your savings account</div><div class="notif-time">Today, 9:00 AM</div></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot gold"></div>
+          <div><div class="notif-text">Credit card bill due on Jun 15 — ₹42,300 outstanding</div><div class="notif-time">Yesterday</div></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot blue"></div>
+          <div><div class="notif-text">Your FD of ₹1,80,000 matures on Aug 12, 2026</div><div class="notif-time">May 30</div></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot green"></div>
+          <div><div class="notif-text">Reward points updated — 12,840 points available to redeem</div><div class="notif-time">May 28</div></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot gold"></div>
+          <div><div class="notif-text">Home Loan EMI of ₹14,500 auto-debited successfully</div><div class="notif-time">May 10</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loan Status -->
+    <div class="dashboard-panel" style="margin-bottom:18px">
+      <div class="dashboard-panel-header">
+        <span class="dashboard-panel-title">Active Loan Status</span>
+        <span class="panel-action" onclick="window.location.href='loans.html'">View All Loans</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+            <span style="font-size:.85rem;font-weight:600">Home Loan</span>
+            <span style="font-size:.8rem;color:var(--gold-light)">60% Repaid</span>
+          </div>
+          <div style="font-size:.75rem;color:#64748B);margin-bottom:6px">Outstanding: ₹18,00,000 | EMI: ₹14,500/month</div>
+          <div class="loan-progress"><div class="loan-progress-fill" style="width:60%"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+            <span style="font-size:.85rem;font-weight:600">Personal Loan</span>
+            <span style="font-size:.8rem;color:var(--gold-light)">35% Repaid</span>
+          </div>
+          <div style="font-size:.75rem;color:#64748B);margin-bottom:6px">Outstanding: ₹3,25,000 | EMI: ₹9,800/month</div>
+          <div class="loan-progress"><div class="loan-progress-fill" style="width:35%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:16px;color:#94A3B8);font-size:.75rem">
+      © 2026 Stackly Bank Ltd. | Secured Session | Last Updated: June 1, 2026
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+  /* ── Auth guard: redirect to login if not logged in ────── */
+  const storedEmail = (localStorage.getItem('tsb-user-email') || '').trim();
+  const storedName  = (localStorage.getItem('tsb-user-name')  || '').trim();
+  if (!storedEmail) {
+    window.location.replace('login.html');
+    return;
+  }
+
+  /* ── Derive display name ───────────────────────────────── */
+  function toTitleCase(str) {
+    return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  }
+  let displayName = '', firstName = '';
+  if (storedName) {
+    displayName = toTitleCase(storedName);
+    firstName   = displayName.split(' ')[0];
+  } else {
+    const prefix = storedEmail.split('@')[0].replace(/[._\-]/g, ' ');
+    displayName  = toTitleCase(prefix).toUpperCase();
+    firstName    = toTitleCase(prefix.split(/\s+/)[0]);
+  }
+
+  /* ── Greeting ──────────────────────────────────────────── */
+  const greetingEl = document.getElementById('dashboard-greeting-h2');
+  if (greetingEl) {
+    const hour = new Date().getHours();
+    const tod  = hour < 12 ? 'Morning' : hour < 17 ? 'Afternoon' : 'Evening';
+    greetingEl.textContent = firstName ? `Good ${tod}, ${firstName}! 👋` : `Good ${tod}! 👋`;
+  }
+
+  /* ── Card holder name ──────────────────────────────────── */
+  const cardHolderEl = document.getElementById('card-holder-name');
+  if (cardHolderEl && displayName) cardHolderEl.textContent = displayName;
+
+  /* ── Email pill ────────────────────────────────────────── */
+  const emailEl = document.getElementById('topbar-email-text');
+  const pillEl  = document.getElementById('topbar-email-pill');
+  if (emailEl) emailEl.textContent = storedEmail;
+  if (pillEl)  pillEl.title = 'Logged in as: ' + storedEmail;
+
+  /* ── Avatar initials ───────────────────────────────────── */
+  const avatarEl = document.getElementById('topbar-avatar');
+  if (avatarEl) {
+    const src  = displayName || storedEmail.replace(/[@._]/g,' ');
+    const parts = src.split(/\s+/).filter(Boolean);
+    avatarEl.textContent = ((parts[0]||'S')[0] + (parts[1]||'B')[0]).toUpperCase();
+  }
+
+  /* ── Logout: clear session ─────────────────────────────── */
+  document.querySelectorAll('a').forEach(a => {
+    if (a.textContent.trim().includes('Logout')) {
+      a.addEventListener('click', () => {
+        localStorage.removeItem('tsb-user-email');
+        localStorage.removeItem('tsb-user-name');
+      });
+    }
+  });
+
+  /* ── Notification panel ────────────────────────────────── */
+  const notifBtn   = document.getElementById('notif-btn');
+  const notifPanel = document.getElementById('notif-panel');
+  const markAllBtn = document.getElementById('mark-all-btn');
+  const notifDot   = document.getElementById('notif-dot');
+
+  if (notifBtn && notifPanel) {
+    notifBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      notifPanel.style.display = notifPanel.style.display === 'none' ? 'block' : 'none';
+    });
+    notifPanel.addEventListener('click', function(e) { e.stopPropagation(); });
+    document.addEventListener('click', function() { notifPanel.style.display = 'none'; });
+  }
+
+  if (markAllBtn) {
+    markAllBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (notifDot) notifDot.style.display = 'none';
+      document.querySelectorAll('.sidebar-nav-item span').forEach(s => {
+        if (s.textContent.trim() === '3') s.style.display = 'none';
+      });
+      showToast('All notifications marked as read', 'success');
+      if (notifPanel) notifPanel.style.display = 'none';
+    });
+  }
+})();
+</script>
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1a1a2e;border-top:2px solid #00CCFF;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.78rem;font-family:sans-serif"><span style="color:#00CCFF;font-weight:700">🎓 DEMO PROJECT</span><span style="color:rgba(255,255,255,.7)">This is a student portfolio website — not a real bank. No real data is collected.</span><button onclick="this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);padding:3px 10px;border-radius:50px;cursor:pointer;font-size:.72rem;margin-left:8px">Dismiss</button></div>
+</body>
+</html>
+
+

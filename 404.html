@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Page not found — Stackly Bank">
+<title>404 — Page Not Found | Stackly Bank</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+.float-404{animation:float404 4s ease-in-out infinite}
+@keyframes float404{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.bg-ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(11,107,206,.07);
+  animation:ringPulse 4s ease-in-out infinite
+}
+.bg-ring-1{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.bg-ring-2{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:.5s}
+.bg-ring-3{width:800px;height:800px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:1s}
+@keyframes ringPulse{0%,100%{opacity:.6}50%{opacity:.2}}
+</style>
+</head>
+<body>
+<div id="demo-banner" style="background:#f59e0b;color:#000;text-align:center;padding:8px 16px;font-size:13px;font-weight:700;position:sticky;top:0;z-index:99999;">&#9888; DEMO PROJECT ONLY &mdash; This is NOT a real bank. No real financial transactions occur.</div>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img class="nav-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly">
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Stackly</span>
+          <span class="nav-logo-tagline">Secure Banking</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Open Account</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-404">
+  <div class="hero-bg-shapes">
+    <div class="hero-shape hero-shape-1" style="opacity:.06"></div>
+    <div class="hero-shape hero-shape-2" style="opacity:.05"></div>
+  </div>
+  <div class="bg-ring bg-ring-1"></div>
+  <div class="bg-ring bg-ring-2"></div>
+  <div class="bg-ring bg-ring-3"></div>
+
+  <div class="page-404-content">
+    <div class="float-404">
+      <div class="error-number">404</div>
+    </div>
+    <div style="font-size:3.5rem;margin-bottom:1rem">🏦</div>
+    <h1 class="error-title">Page <span class="text-gold">Not Found</span></h1>
+    <p class="error-message">The page you are looking for is unavailable or may have been moved. Let Stackly guide you safely back to your financial journey.</p>
+    <div class="error-actions">
+      <a href="index.html" class="btn btn-primary btn-lg">🏠 Go Home</a>
+      <a href="login.html" class="btn btn-outline btn-lg">🔐 Login</a>
+      <a href="contact.html" class="btn btn-outline-gold btn-lg">📞 Contact Support</a>
+    </div>
+    <div style="margin-top:3rem;display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+      <a href="services.html" style="font-size:.85rem;color:rgba(255,255,255,.4);transition:var(--tr)" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">→ Banking Services</a>
+      <a href="loans.html" style="font-size:.85rem;color:rgba(255,255,255,.4);transition:var(--tr)" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">→ Loans</a>
+      <a href="credit-cards.html" style="font-size:.85rem;color:rgba(255,255,255,.4);transition:var(--tr)" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">→ Credit Cards</a>
+      <a href="faq.html" style="font-size:.85rem;color:rgba(255,255,255,.4);transition:var(--tr)" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">→ FAQ</a>
+    </div>
+    <p style="margin-top:2.5rem;font-size:.78rem;color:rgba(255,255,255,.25)">
+      Error Code: 404 | Stackly Bank © 2026
+    </p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1a1a2e;border-top:2px solid #00CCFF;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.78rem;font-family:sans-serif"><span style="color:#00CCFF;font-weight:700">🎓 DEMO PROJECT</span><span style="color:rgba(255,255,255,.7)">This is a student portfolio website — not a real bank. No real data is collected.</span><button onclick="this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);padding:3px 10px;border-radius:50px;cursor:pointer;font-size:.72rem;margin-left:8px">Dismiss</button></div>
+</body>
+</html>
+
+

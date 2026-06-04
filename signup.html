@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Open a Stackly Bank account — Digital, Fast and Secure">
+<title>Open Account — Stackly Bank</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="demo-banner" style="background:#f59e0b;color:#000;text-align:center;padding:8px 16px;font-size:13px;font-weight:700;position:sticky;top:0;z-index:99999;">&#9888; DEMO PROJECT ONLY &mdash; This is NOT a real bank. No real financial transactions occur.</div>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img class="nav-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly">
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Stackly</span>
+          <span class="nav-logo-tagline">Secure Banking</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-page" style="align-items:flex-start;padding-top:100px;padding-bottom:40px">
+  <div class="auth-bg-shapes">
+    <div class="hero-shape hero-shape-1" style="opacity:.07"></div>
+    <div class="hero-shape hero-shape-2" style="opacity:.05"></div>
+  </div>
+  <div class="container">
+    <div class="auth-grid">
+      <!-- Left Info -->
+      <div class="auth-info">
+        <span class="section-tag">Join Stackly</span>
+        <h1 class="auth-info-title">Open Your Account in <span class="text-gold">10 Minutes</span></h1>
+        <p class="auth-info-subtitle">100% digital, paperless account opening. No branch visit needed. Start banking with zero balance.</p>
+        <div class="auth-features" style="margin-bottom:28px">
+          <div class="auth-feature"><div class="auth-feature-icon">0️⃣</div>Zero balance account opening</div>
+          <div class="auth-feature"><div class="auth-feature-icon">📋</div>Minimal KYC — just Aadhaar & PAN</div>
+          <div class="auth-feature"><div class="auth-feature-icon">💳</div>Instant virtual debit card issued</div>
+          <div class="auth-feature"><div class="auth-feature-icon">📈</div>Earn up to 7% interest on savings</div>
+          <div class="auth-feature"><div class="auth-feature-icon">🎁</div>₹500 welcome bonus on first transaction</div>
+        </div>
+        <div style="background:rgba(11,107,206,.09);border:1px solid rgba(11,107,206,.22);border-radius:var(--r-md);padding:18px">
+          <h4 style="font-size:.92rem;margin-bottom:10px;color:var(--gold-light)">📢 Limited Time Offer</h4>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.62);line-height:1.6">Open account today and get ₹500 Amazon Gift Voucher + first year annual fee waiver on Rewards Credit Card.</p>
+        </div>
+      </div>
+
+      <!-- Signup Card -->
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <div class="auth-card-logo">
+            <img class="auth-card-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly">
+            <span class="auth-card-logo-name">Stackly Bank</span>
+          </div>
+          <h2 class="auth-card-title">Create Account</h2>
+          <p class="auth-card-subtitle">Fill in your details to get started</p>
+        </div>
+
+        <form class="auth-form" id="signup-form">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Full Name</label>
+            <div class="input-group">
+              <span class="input-icon">👤</span>
+              <input class="form-control" type="text" id="full-name" placeholder="As per Aadhaar card" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <div class="input-group">
+              <span class="input-icon">📧</span>
+              <input class="form-control" type="email" id="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="mobile">Mobile Number</label>
+            <div class="input-group">
+              <span class="input-icon">📱</span>
+              <input class="form-control" type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="account-type">Account Type</label>
+            <select class="form-control" id="account-type" required>
+              <option value="" disabled selected>Select account type</option>
+              <option value="savings-digital">Digital Savings Account (Zero Balance)</option>
+              <option value="savings-classic">Classic Savings Account</option>
+              <option value="current">Current Account</option>
+              <option value="salary">Salary Account</option>
+              <option value="business">Business Account</option>
+              <option value="student">Student Account</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Create Password</label>
+            <div class="input-group" style="position:relative">
+              <span class="input-icon">🔒</span>
+              <input class="form-control" type="password" id="password" placeholder="Min. 8 characters" required style="padding-right:44px">
+              <button type="button" class="password-toggle">👁</button>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar"><div class="strength-fill"></div></div>
+              <span class="strength-text"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="confirm-password">Confirm Password</label>
+            <div class="input-group" style="position:relative">
+              <span class="input-icon">🔒</span>
+              <input class="form-control" type="password" id="confirm-password" placeholder="Re-enter password" required style="padding-right:44px">
+              <button type="button" class="password-toggle">👁</button>
+            </div>
+          </div>
+          <label class="checkbox-label" style="font-size:.8rem">
+            <input type="checkbox" required>
+            I agree to Stackly's <a href="#" style="color:var(--gold-light)">Terms of Service</a> and <a href="#" style="color:var(--gold-light)">Privacy Policy</a>
+          </label>
+          <button type="submit" class="btn btn-primary w-full" style="justify-content:center;margin-top:4px">
+            Create My Account →
+          </button>
+        </form>
+
+        <div class="auth-footer-note">
+          Already have an account? <a href="login.html">Sign In →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1a1a2e;border-top:2px solid #00CCFF;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.78rem;font-family:sans-serif"><span style="color:#00CCFF;font-weight:700">🎓 DEMO PROJECT</span><span style="color:rgba(255,255,255,.7)">This is a student portfolio website — not a real bank. No real data is collected.</span><button onclick="this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);padding:3px 10px;border-radius:50px;cursor:pointer;font-size:.72rem;margin-left:8px">Dismiss</button></div>
+</body>
+</html>
+
+

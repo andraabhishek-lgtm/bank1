@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stackly Bank Support — Help Centre, Chat, Phone and Email Support">
+<title>Support — Stackly Bank</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="demo-banner" style="background:#f59e0b;color:#000;text-align:center;padding:8px 16px;font-size:13px;font-weight:700;position:sticky;top:0;z-index:99999;">&#9888; DEMO PROJECT ONLY &mdash; This is NOT a real bank. No real financial transactions occur.</div>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo"><img class="nav-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly"><div class="nav-logo-text"><span class="nav-logo-name">Stackly</span><span class="nav-logo-tagline">Secure Banking</span></div></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a>
+        <a href="digital-banking.html">Digital</a><a href="loans.html">Loans</a>
+        <a href="credit-cards.html">Cards</a><a href="support.html" class="active">Support</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Open Account</a>
+        <button class="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <div class="mobile-nav-links">
+    <a href="index.html">🏠 Home</a><a href="about.html">🏛️ About Us</a><a href="services.html">💼 Services</a>
+    <a href="digital-banking.html">📱 Digital</a><a href="loans.html">💰 Loans</a>
+    <a href="credit-cards.html">💳 Cards</a><a href="support.html">🎧 Support</a><a href="contact.html">📞 Contact</a>
+  </div>
+  <div class="mobile-actions"><a href="login.html" class="btn btn-outline w-full">Login</a><a href="signup.html" class="btn btn-primary w-full">Open Account</a></div>
+</div>
+<div class="menu-overlay"></div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Support</span></div>
+    <span class="section-tag">Help Centre</span>
+    <h1 class="page-header-title">How Can We <span class="text-gold">Help You?</span></h1>
+    <p class="page-header-subtitle">Find answers, resolve issues and get expert banking assistance — 24 hours a day, 7 days a week.</p>
+    <div style="max-width:520px;margin:24px auto 0;display:flex;gap:10px">
+      <input class="form-control" type="text" placeholder="Search for help topics, articles..." style="flex:1">
+      <button class="btn btn-primary" onclick="showToast('Searching help articles...','info')">Search</button>
+    </div>
+  </div>
+</div>
+
+<!-- Support Channels -->
+<section style="background:#060c18">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-tag">Get Help</span>
+      <h2 class="section-title">Choose Your <span>Support Channel</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div class="value-card reveal" onclick="showToast('Connecting to chat agent...','info')" style="cursor:pointer">
+        <span class="value-icon">💬</span>
+        <h3 class="value-title">Live Chat</h3>
+        <p class="value-desc">Chat with our support agents in real-time. Average response: 2 minutes. Available 24/7.</p>
+        <button class="btn btn-primary btn-sm" style="margin-top:16px;width:100%;justify-content:center">Start Chat</button>
+      </div>
+      <div class="value-card reveal reveal-d1">
+        <span class="value-icon">📞</span>
+        <h3 class="value-title">Phone Support</h3>
+        <p class="value-desc">Call our toll-free number. Specialists for accounts, loans, cards and fraud.</p>
+        <a href="tel:18001234567" class="btn btn-outline-gold btn-sm" style="margin-top:16px;width:100%;justify-content:center">Call Now</a>
+      </div>
+      <div class="value-card reveal reveal-d2">
+        <span class="value-icon">📧</span>
+        <h3 class="value-title">Email Support</h3>
+        <p class="value-desc">Send detailed queries to our support team. We guarantee response within 2 hours.</p>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:16px;width:100%;justify-content:center">Send Email</a>
+      </div>
+      <div class="value-card reveal reveal-d3">
+        <span class="value-icon">🏦</span>
+        <h3 class="value-title">Visit Branch</h3>
+        <p class="value-desc">Visit any of our 250+ branches for in-person assistance. No appointment needed.</p>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:16px;width:100%;justify-content:center">Find Branch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Support Categories -->
+<section style="background:var(--navy)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-tag">Help Topics</span>
+      <h2 class="section-title">Browse by <span>Category</span></h2>
+      <p class="section-subtitle">Find answers to common queries organised by category.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div class="service-card reveal" onclick="window.location.href='faq.html'">
+        <div class="service-icon-wrap">🏦</div><h3 class="service-name">Account Management</h3>
+        <p class="service-desc">Opening, KYC update, statement download, nomination, joint account, closure.</p>
+        <a href="faq.html" class="service-link">View Articles →</a>
+      </div>
+      <div class="service-card reveal reveal-d1" onclick="window.location.href='faq.html'">
+        <div class="service-icon-wrap">💸</div><h3 class="service-name">Transfers & Payments</h3>
+        <p class="service-desc">NEFT, RTGS, IMPS, UPI issues, failed transactions, chargeback requests.</p>
+        <a href="faq.html" class="service-link">View Articles →</a>
+      </div>
+      <div class="service-card reveal reveal-d2" onclick="window.location.href='faq.html'">
+        <div class="service-icon-wrap">💳</div><h3 class="service-name">Cards & Debit</h3>
+        <p class="service-desc">Card activation, pin change, block/unblock, dispute transactions, virtual card.</p>
+        <a href="faq.html" class="service-link">View Articles →</a>
+      </div>
+      <div class="service-card reveal" onclick="window.location.href='faq.html'">
+        <div class="service-icon-wrap">💰</div><h3 class="service-name">Loans</h3>
+        <p class="service-desc">EMI queries, prepayment, NOC, statement, foreclosure, overdue resolution.</p>
+        <a href="faq.html" class="service-link">View Articles →</a>
+      </div>
+      <div class="service-card reveal reveal-d1" onclick="window.location.href='faq.html'">
+        <div class="service-icon-wrap">📱</div><h3 class="service-name">Mobile & Internet Banking</h3>
+        <p class="service-desc">Login issues, password reset, 2FA, app installation, browser compatibility.</p>
+        <a href="faq.html" class="service-link">View Articles →</a>
+      </div>
+      <div class="service-card reveal reveal-d2" onclick="window.location.href='faq.html'">
+        <div class="service-icon-wrap">🚨</div><h3 class="service-name">Fraud & Security</h3>
+        <p class="service-desc">Report unauthorized transactions, phishing, SIM swap fraud, account takeover.</p>
+        <a href="faq.html" class="service-link">View Articles →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency Support -->
+<section style="background:#060c18;padding:60px 0">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,rgba(231,76,60,.12),rgba(231,76,60,.04));border:1px solid rgba(231,76,60,.3);border-radius:var(--r-xl);padding:40px;text-align:center;max-width:700px;margin:0 auto" class="reveal">
+      <div style="font-size:3rem;margin-bottom:16px">🚨</div>
+      <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:10px">Emergency? Report Fraud Instantly</h3>
+      <p style="color:#334155);font-size:.9rem;line-height:1.7;margin-bottom:24px">If you notice unauthorized transactions or suspect fraud on your account, call our 24/7 emergency fraud hotline immediately. We'll block your account and investigate.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="tel:18001234999" class="btn btn-primary">📞 Fraud Hotline: 1800-123-4999</a>
+        <button class="btn btn-outline" onclick="showToast('Account blocked for security','success')">🔒 Emergency Block Account</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-logo-wrap"><img class="footer-logo-icon" src="images/stackly-bank-logo.webp" alt="Stackly"><div><div class="footer-logo-name">Stackly Bank</div><div class="footer-tagline-text">Secure Banking. Smarter Future.</div></div></a><p class="footer-desc">India's trusted digital banking platform.</p><div class="footer-social"><a class="social-icon" href="404.html">f</a><a class="social-icon" href="404.html">𝕏</a><a class="social-icon" href="404.html">📸</a><a class="social-icon" href="404.html">in</a></div></div>
+      <div class="footer-col"><h4>Support</h4><div class="footer-links"><a href="support.html">Help Centre</a><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a></div></div>
+      <div class="footer-col"><h4>Quick Links</h4><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="loans.html">Loans</a></div></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><div class="footer-contact-text">1800-123-4567</div></div><div class="footer-contact-item"><span class="footer-contact-icon">🚨</span><div class="footer-contact-text">Fraud: 1800-123-4999</div></div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span><div class="footer-contact-text"><a href="https://maps.google.com/?q=Stackly+Tower,+BKC,+Mumbai,+Maharashtra+400051" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Stackly Tower, BKC<br>Mumbai, Maharashtra 400051</a></div></div></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2026 Stackly Bank Ltd. | Andra Abhishek (STK-26-1248)</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div>
+</footer>
+
+<button class="back-to-top">↑</button>
+<script src="js/main.js"></script>
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1a1a2e;border-top:2px solid #00CCFF;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.78rem;font-family:sans-serif"><span style="color:#00CCFF;font-weight:700">🎓 DEMO PROJECT</span><span style="color:rgba(255,255,255,.7)">This is a student portfolio website — not a real bank. No real data is collected.</span><button onclick="this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);padding:3px 10px;border-radius:50px;cursor:pointer;font-size:.72rem;margin-left:8px">Dismiss</button></div>
+</body>
+</html>
+
+

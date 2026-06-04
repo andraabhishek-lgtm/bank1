@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <radialGradient id="c_bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0d2137"/><stop offset="100%" stop-color="#030912"/>
+    </radialGradient>
+    <linearGradient id="c_gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4a820"/><stop offset="40%" stop-color="#f0cc50"/><stop offset="100%" stop-color="#9a7215"/>
+    </linearGradient>
+    <linearGradient id="c_navy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#071220"/>
+    </linearGradient>
+    <linearGradient id="c_teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#005580"/><stop offset="100%" stop-color="#003050"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#c_bg)"/>
+  <circle cx="400" cy="225" r="185" fill="rgba(201,162,39,.04)"/>
+  <!-- Back navy card -->
+  <g transform="translate(430,248) rotate(8)">
+    <rect x="-148" y="-93" width="296" height="186" rx="18" fill="url(#c_navy)" opacity=".65"/>
+    <rect x="-148" y="-93" width="296" height="186" rx="18" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+  </g>
+  <!-- Mid teal card -->
+  <g transform="translate(385,242) rotate(-5)">
+    <rect x="-148" y="-93" width="296" height="186" rx="18" fill="url(#c_teal)" opacity=".5"/>
+    <rect x="-148" y="-93" width="296" height="186" rx="18" fill="none" stroke="rgba(0,168,232,.12)" stroke-width="1"/>
+  </g>
+  <!-- Main gold card -->
+  <g transform="translate(400,222) rotate(-1)">
+    <rect x="-148" y="-93" width="296" height="186" rx="18" fill="url(#c_gold)"/>
+    <!-- Inner top highlight -->
+    <rect x="-148" y="-93" width="296" height="32" rx="18 18 0 0" fill="rgba(255,255,255,.14)"/>
+    <rect x="-148" y="-93" width="296" height="186" rx="18" fill="none" stroke="rgba(255,220,100,.32)" stroke-width="1.5"/>
+    <!-- Chip body -->
+    <rect x="-108" y="-62" width="46" height="36" rx="5" fill="rgba(218,185,70,.92)"/>
+    <line x1="-108" y1="-44" x2="-62" y2="-44" stroke="rgba(180,130,20,.5)" stroke-width="1.5"/>
+    <line x1="-85"  y1="-62" x2="-85" y2="-26" stroke="rgba(180,130,20,.5)" stroke-width="1.5"/>
+    <rect x="-103" y="-57" width="13" height="11" rx="2" fill="rgba(170,120,15,.4)"/>
+    <rect x="-84"  y="-57" width="13" height="11" rx="2" fill="rgba(170,120,15,.4)"/>
+    <!-- Contactless waves -->
+    <path d="M-40,-60 Q-28,-44 -40,-28" stroke="rgba(0,0,0,.32)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M-47,-66 Q-31,-44 -47,-22" stroke="rgba(0,0,0,.26)" stroke-width="2"   stroke-linecap="round"/>
+    <path d="M-54,-72 Q-34,-44 -54,-16" stroke="rgba(0,0,0,.2)"  stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Card number dots -->
+    <g fill="rgba(0,0,0,.38)">
+      <circle cx="-106" cy="14" r="3.5"/><circle cx="-97" cy="14" r="3.5"/>
+      <circle cx="-88"  cy="14" r="3.5"/><circle cx="-79" cy="14" r="3.5"/>
+      <circle cx="-62"  cy="14" r="3.5"/><circle cx="-53" cy="14" r="3.5"/>
+      <circle cx="-44"  cy="14" r="3.5"/><circle cx="-35" cy="14" r="3.5"/>
+      <circle cx="-18"  cy="14" r="3.5"/><circle cx="-9"  cy="14" r="3.5"/>
+      <circle cx="0"    cy="14" r="3.5"/><circle cx="9"   cy="14" r="3.5"/>
+      <circle cx="38"   cy="14" r="3.5"/><circle cx="47"  cy="14" r="3.5"/>
+      <circle cx="56"   cy="14" r="3.5"/><circle cx="65"  cy="14" r="3.5"/>
+    </g>
+    <!-- Name and expiry bars -->
+    <rect x="-108" y="44" width="108" height="10" rx="5" fill="rgba(0,0,0,.28)"/>
+    <rect x="-108" y="60" width="58"  height="8"  rx="4" fill="rgba(0,0,0,.22)"/>
+    <!-- Network logo (Mastercard-style) -->
+    <circle cx="90" cy="60" r="19" fill="rgba(210,50,0,.78)"/>
+    <circle cx="107" cy="60" r="19" fill="rgba(255,130,0,.55)"/>
+  </g>
+  <!-- Award circle -->
+  <g transform="translate(614,118)">
+    <circle cx="0" cy="0" r="50" fill="rgba(201,162,39,.12)" stroke="rgba(201,162,39,.38)" stroke-width="2"/>
+    <circle cx="0" cy="0" r="40" fill="rgba(201,162,39,.07)" stroke="rgba(201,162,39,.18)" stroke-width="1" stroke-dasharray="4 7"/>
+    <polygon points="0,-28 6.6,-10 26,-10 11.4,2.5 16.4,22 0,10 -16.4,22 -11.4,2.5 -26,-10 -6.6,-10"
+             fill="rgba(201,162,39,.88)" stroke="rgba(255,200,60,.35)" stroke-width="1"/>
+    <rect x="-20" y="24" width="40" height="8" rx="4" fill="rgba(255,255,255,.2)"/>
+  </g>
+  <!-- Sparkle top-left -->
+  <g transform="translate(182,96) scale(.65)">
+    <polygon points="0,-26 5.5,-8 22,-8 9,3 14,20 0,9 -14,20 -9,3 -22,-8 -5.5,-8"
+             fill="rgba(201,162,39,.68)" stroke="none"/>
+  </g>
+  <!-- Sparkle bottom-right -->
+  <g transform="translate(644,348) scale(.45)">
+    <polygon points="0,-26 5.5,-8 22,-8 9,3 14,20 0,9 -14,20 -9,3 -22,-8 -5.5,-8"
+             fill="rgba(201,162,39,.55)" stroke="none"/>
+  </g>
+  <!-- Coin stack (right) -->
+  <g transform="translate(585,268)">
+    <ellipse cx="0" cy="0"   rx="38" ry="9"  fill="rgba(201,162,39,.68)"/>
+    <rect    x="-38" y="-17" width="76" height="17" fill="rgba(201,162,39,.68)"/>
+    <ellipse cx="0" cy="-17" rx="38" ry="9"  fill="rgba(232,185,35,.85)"/>
+    <ellipse cx="0" cy="-21" rx="38" ry="9"  fill="rgba(201,162,39,.58)"/>
+    <rect    x="-38" y="-38" width="76" height="17" fill="rgba(201,162,39,.58)"/>
+    <ellipse cx="0" cy="-38" rx="38" ry="9"  fill="rgba(232,185,35,.72)"/>
+    <ellipse cx="0" cy="-42" rx="38" ry="9"  fill="rgba(201,162,39,.46)"/>
+    <rect    x="-38" y="-59" width="76" height="17" fill="rgba(201,162,39,.46)"/>
+    <ellipse cx="0" cy="-59" rx="38" ry="9"  fill="rgba(232,185,35,.6)"/>
+  </g>
+  <!-- Floating particles -->
+  <circle cx="152" cy="138" r="5"  fill="rgba(201,162,39,.26)"/>
+  <circle cx="152" cy="138" r="12" fill="none" stroke="rgba(201,162,39,.12)" stroke-width="1"/>
+  <circle cx="686" cy="136" r="4"  fill="rgba(0,168,232,.22)"/>
+  <circle cx="686" cy="136" r="10" fill="none" stroke="rgba(0,168,232,.1)"  stroke-width="1"/>
+  <circle cx="126" cy="330" r="3"  fill="rgba(201,162,39,.18)"/>
+  <circle cx="710" cy="350" r="2.5" fill="rgba(255,255,255,.14)"/>
+  <!-- Hex accent -->
+  <polygon points="90,210 100,193 120,193 130,210 120,227 100,227"
+           fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+  <polygon points="668,168 678,151 698,151 708,168 698,185 678,185"
+           fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+</svg>
