@@ -129,7 +129,7 @@ section{padding:88px 0;position:relative}
   filter:none
 }
 .nav-logo-text{display:flex;flex-direction:column;justify-content:center}
-.nav-logo-name{display:none}
+.nav-logo-name{display:block;font-size:1.05rem;font-weight:800;color:#FFFFFF;letter-spacing:-0.3px;line-height:1.1}
 .nav-logo-tagline{
   font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
   color:#00CCFF;
@@ -3291,9 +3291,9 @@ html[data-theme="dark"] .news-section .section-subtitle{
 .security-badge-main p{color:rgba(255,255,255,.7) !important}
 .security-icon-main{color:#FFFFFF !important;opacity:.9}
 
-/* ── Navbar logo: hide name, always show highlighted tagline ── */
+/* ── Navbar logo: show name + tagline ── */
 .nav-logo-name,
-.navbar.scrolled .nav-logo-name{display:none !important}
+.navbar.scrolled .nav-logo-name{display:block !important}
 .nav-logo-tagline,
 .navbar.scrolled .nav-logo-tagline{
   display:block !important;
